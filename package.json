@@ -18,10 +18,7 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
-<<<<<<< HEAD
-=======
     "jest": "^27.0.6",
->>>>>>> 207c8793bb130a35dd5125987ba2ab6744a47b1a
     "nodemon": "^2.0.7",
     "supertest": "^6.1.3"
   },

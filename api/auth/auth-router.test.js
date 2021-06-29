@@ -1,16 +1,15 @@
-<<<<<<< HEAD
-const server = require('../server')
-const db = require('../../data/dbConfig')
-const request = require('supertest')
-
+const server = require("../server")
+const db = require("../../data/dbConfig")
+const request = require("supertest")
 
 describe('register', () => {
 
-    it('should give 201 status', async () => {
+    it("should give status 201", async() => {
         const res = await request(server)
-        .post("/users/register")
-        .send({ name: "Eddie Van Halen", username: "Jump", password: "Van Halen 1"})
-    expect(res.status).toBe(201)
+            .post("/users/register")
+            .send({ name: "Eddie Van Halen Jr", username: "Jump2", password: "banana"})
+
+        expect(res.status).toBe(201)
     })
 
     it('should add a user and return it', async () => {
@@ -39,19 +38,5 @@ describe("user login", () => {
             .post("/users/login")
             .send({username: "Panama", password: "Van Halen 2"})
         expect(res.body.token)
-=======
-const server = require("../server")
-const db = require("../../data/dbConfig")
-const request = require("supertest")
-
-describe('register', () => {
-
-    it("should give status 201", async() => {
-        const res = await request(server)
-            .post("/users/register")
-            .send({ name: "Eddie Van Halen Jr", username: "Jump2", password: "banana"})
-
-        expect(res.status).toBe(201)
->>>>>>> 207c8793bb130a35dd5125987ba2ab6744a47b1a
     })
 })
