@@ -5,6 +5,7 @@ const cors = require("cors");
 // middleware here
 const db = require("../data/dbConfig");
 const authRouter = require("./auth/auth-router");
+const commentsRouter = require("./comments/comments-router");
 
 const server = express();
 
@@ -22,5 +23,6 @@ server.get("/", (req, res) => {
 })
 
 server.use("/users", authRouter);
+server.use("/comments", commentsRouter);
 
 module.exports = server;
