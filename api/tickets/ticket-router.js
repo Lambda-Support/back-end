@@ -28,6 +28,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     let ticket = req.body;
+    ticket.user_id = req.decodedToken.user.id;
 
     Tickets.add(ticket)
         .then(saved => {
