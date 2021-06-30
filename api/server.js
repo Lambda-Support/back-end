@@ -4,7 +4,9 @@ const cors = require("cors");
 
 // middleware here
 const db = require("../data/dbConfig");
+const authenticate = require("./auth/authenticate-mw");
 const authRouter = require("./auth/auth-router");
+const ticketRouter = require("./tickets/ticket-router");
 
 const server = express();
 
@@ -22,5 +24,6 @@ server.get("/", (req, res) => {
 })
 
 server.use("/users", authRouter);
+server.use("/tickets", authenticate, ticketRouter);
 
 module.exports = server;
